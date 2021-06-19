@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from "vue-router";
+import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
 
 import Posts from "./pages/Posts.vue";
 import Login from './pages/Login.vue';
@@ -9,7 +9,7 @@ const routes = [
     {path: '/login', component: Login, name: "Login"}
 ];
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition) {
