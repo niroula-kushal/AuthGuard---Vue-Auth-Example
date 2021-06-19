@@ -1,5 +1,7 @@
 # AuthGuard---Vue-Auth-Example
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/79cc5055-8455-4842-aad9-4520ff4ab45d/deploy-status)](https://app.netlify.com/sites/auth-guard/deploys)
+
 Demo showcasing how authentication can be used in a Vue spa.
 
 > Demo Link: https://auth-guard.netlify.app/
