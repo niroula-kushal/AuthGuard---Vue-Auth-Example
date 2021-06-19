@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Indie Flower', cursive;
+    }
+    a {
+        font-family: "Roboto";
+        font-weight: bold;
+    }
+}
+
+.nav-btn {
+    @apply p-1 px-2.5 border-2 border-t-0 border-b-0 border-green-400 hover:border-red-500
+}
