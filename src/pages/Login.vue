@@ -1,6 +1,6 @@
 <template>
 <div class="flex">
-  <form class="shadow-lg p-4 m-auto w-1/4" @submit.prevent="TryLogin">
+  <form class="shadow-xl p-4 m-auto md:w-1/4 hover:shadow-lg transition-all" @submit.prevent="TryLogin">
     <h5 class="text-center text-primary font-bold">
       Login To Continue
     </h5>
@@ -34,8 +34,14 @@ export default {
     const Password = ref("");
     const auth = useAuth();
     const TryLogin = () => {
-      auth.Login(Username.value, Password.value);
-      router.push('/');
+      try {
+        if (!Username.value) throw "Please enter username";
+        if (!Password.value) throw "Please enter password";
+        auth.Login(Username.value, Password.value);
+        router.push('/');
+      } catch (e) {
+        alert(e);
+      }
     };
     return {
       TryLogin,
