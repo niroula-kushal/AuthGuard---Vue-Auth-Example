@@ -4,15 +4,15 @@
           Latest <a href="https://dev.to" rel="noopener" target="_blank">Dev.to</a> posts
     </span>
   </h5>
-  <div class="flex flex-wrap gap-4 justify-center">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 justify-center">
     <template v-if="LoadingPosts">
       <h5 class="m-auto w-1/6 text-center text-blue-400">
         Loading
       </h5>
     </template>
     <template v-else>
-      <a :href="post.url" target="_blank" rel="noopener" v-for="post in posts" :key="post.id"
-         class="w-full md:w-1/5 flex-shrink-0 p-5 shadow-lg hover:shadow-sm transition-all transform hover:-translate-y-5"
+      <a :href="post.url" target="_blank" rel="noopener" v-for="(post, idx) in posts" :key="post.id"
+         class="w-full p-5 shadow-lg hover:shadow-sm transition-all transform hover:-translate-y-5"
       >
         <img :src="post.cover_image" alt="Cover Image" v-if="!!post.cover_image">
         <img
@@ -27,6 +27,9 @@
         <span class="text-primary">
           {{ post.title }}
         </span>
+        <p class="text-gray-400">
+          {{post.description}}
+        </p>
       </a>
     </template>
   </div>
